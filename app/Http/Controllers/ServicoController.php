@@ -26,20 +26,85 @@ class ServicoController extends Controller
         ], 200);
 
         }
-
-        public function pesquisarPorId($id){
-            $usuario = Servico::find($id);
-      
-            if($usuario == null){
-             return response() ->json([
+        public function excluir($id){
+          $usuario = Servico::find($id);
+  
+          if(!isset($usuario)){
+          return response()->json([
               'status' => false,
-              'message' => "Serviço não encontrado."
-             ]);
-            }
-
-            return response()->json([
-                'status'=> true,
-                'data'=> $usuario
-            ]);
-}
+              'message' => "Serviço não encontrado"
+          ]);
+      }
+  
+      $usuario->delete();
+  
+      return response()->json([
+          'status'=> false,
+          'message' => "Serviço excliuído com sucesso"
+  ]);
+  }
+  
+  public function update(Request $request){
+      $usuario = Servico::find($request->id);
+  
+      if(!isset($usuario)){
+          return response()->json([
+              'status' => false,
+              'message' => "Serviço não encontrado"
+          ]);
+      }
+  
+      if(isset($request->nome)){
+      $usuario->nome = $request->nome;
+      }
+  
+      if(isset($request->descricao)){
+      $usuario->descricao = $request->descricao;
+      }
+  
+      if(isset($request->duracao)){
+      $usuario->duracao = $request->duracao;
+      }
+  
+      if(isset($request->preco)){
+      $usuario->preco = $request->preco;
+      }
+  
+      $usuario->update();
+  
+      return response()->json([
+          'status' => true,
+          'message' => "Serviço atualizado"
+      ]);
+  }
+  
+  public function pesquisarPorNome(Request $request){
+      $usuarios = Servico::where('nome', 'like', '%'.$request->nome.'%')->get();
+  
+  if(count($usuarios) > 0){
+  
+      return response()->json([
+          'status' => true,
+          'data' => $usuarios
+      ]);
+  }
+      return response()->json([
+      'status'=> false,
+      'message' => "Não há resultado para pesquisa"
+  ]);
+  }
+  public function pesquisarPorDescricao($descricao){
+      $usuario = Servico::where('descricao', $descricao)->first();
+      if($usuario == null){
+      return response()->json([
+          'status'=> true,
+          'message' => "Serviço não encontrado"
+      ]);
+  }
+  return response()->json([
+      'status' => true,
+      'data' => $usuario
+      ]);
+  }
+  
 }
