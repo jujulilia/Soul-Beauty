@@ -7,7 +7,7 @@
 ```
 2. Acesse o diretório do projeto:
 ```
-cd exercicios-api
+cd soul-beauty
 ```
 3. Inicializando o Repositorio
 ```
@@ -20,6 +20,11 @@ copy .env.example .env
 5. Acessar o Visual Studio Code
 ```
 code .
+```
+6. Nome e E-mail
+```
+git config  --global user.name "jujulilia"
+git config --global user.email "jujuscosta07@gmail.com"
 ```
 
 ## Licença
