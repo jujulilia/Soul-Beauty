@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProfissionalControler;
 use App\Http\Controllers\ServicoController;
+use App\Models\Profissional;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -53,3 +55,25 @@ Route::get('clientes/cpf',
 
 Route::get('clientes/email',
 [ClienteController::class, 'pesquisarPorEmail']);
+
+
+Route::post('profissional/store',
+[ProfissionalControler::class, 'store']);
+
+Route::delete('profissional/delete/{id}',
+[ProfissionalControler::class, 'excluir']);
+
+Route::put('profissional/update',
+[ProfissionalControler::class, 'update']);
+
+Route::get('profissional/nome',
+[ProfissionalControler::class, 'pesquisarPorNome']);
+
+Route::get('profissional/celular',
+[ProfissionalControler::class, 'pesquisarPorCelular']);
+
+Route::get('profissional/cpf',
+[ProfissionalControler::class, 'pesquisarPorCpf']);
+
+Route::get('profissional/email',
+[ProfissionalControler::class, 'pesquisarPorEmail']);

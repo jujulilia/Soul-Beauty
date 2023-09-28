@@ -30,7 +30,7 @@ class ClienteController extends Controller
     
             return response()->json([
                 "sucess" => true,
-                "message" => "Serviço cadastrado com sucesso",
+                "message" => "Cliente cadastrado com sucesso",
                 "data" => $cliente
             ],200);
     }
