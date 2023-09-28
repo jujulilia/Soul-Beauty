@@ -21,6 +21,11 @@ copy .env.example .env
 ```
 code .
 ```
+6. Nome e E-mail
+```
+git config  --global user.name "jujulilia"
+git config --global user.email "jujuscosta07@gmail.com"
+```
 
 ## Licença
 
