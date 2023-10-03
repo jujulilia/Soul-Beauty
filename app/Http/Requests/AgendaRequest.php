@@ -22,7 +22,14 @@ class AgendaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'id' => 'required|max:120|min:5',
+            'profissional_id' => 'required|max:11|min:10',
+            'cliente_id' => 'required|email|max:120|unique:clientes,email',
+            'servico_id' => 'required|max:11|min:11|unique:clientes,cpf',
+            'data_hora' => 'required',
+            'tipo_pagamento' => 'required|min:3|max:20',
+            'valor' => 'required|max:2|min:2',
+            
         ];
     }
 }
