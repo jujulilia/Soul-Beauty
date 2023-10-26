@@ -35,25 +35,25 @@ Route::get('servico/find/descricao/{descricao}',
 
 
 
-Route::post('clientes/store',
+Route::post('cliente/store',
 [ClienteController::class, 'store']);
 
-Route::delete('clientes/delete/{id}',
+Route::delete('cliente/delete/{id}',
 [ClienteController::class, 'excluir']);
 
-Route::put('clientes/update',
+Route::put('cliente/update',
 [ClienteController::class, 'update']);
 
-Route::get('clientes/nome',
+Route::get('cliente/nome',
 [ClienteController::class, 'pesquisarPorNome']);
 
-Route::get('clientes/celular',
+Route::get('cliente/celular',
 [ClienteController::class, 'pesquisarPorCelular']);
 
-Route::get('clientes/cpf',
+Route::get('cliente/cpf',
 [ClienteController::class, 'pesquisarPorCpf']);
 
-Route::get('clientes/email',
+Route::get('cliente/email',
 [ClienteController::class, 'pesquisarPorEmail']);
 
 
