@@ -13,21 +13,22 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nome', 120)->nullable(false);
             $table->string('celular', 11)->nullable(false);
-            $table->integer('email', 120)->unique()->nullable(false);
-            $table->decimal('cpf', 11)->unique()->nullable(false);
+            $table->string('email')->unique()->nullable(false);
+            $table->string('cpf' )->unique()->nullable(false);
             $table->string('dataNascimento')->nullable(false);
             $table->string('cidade', 120)->nullable(false);
-            $table->integer('estado', 2)->nullable(false);
-            $table->decimal('pais', 80)->nullable(false);
+            $table->string('estado' )->nullable(false);
+            $table->string('pais')->nullable(false);
             $table->string('rua', 120)->nullable(false);
             $table->string('numero', 10)->nullable(false);
-            $table->integer('bairro', 100)->nullable(false);
-            $table->decimal('cep', 8)->nullable(false);
+            $table->string('bairro')->nullable(false);
+            $table->string('cep')->nullable(false);
             $table->string('complemento', 150)->nullable(true);
             $table->string('password')->nullable(false);
+            
+            $table->timestamps();
         });
     }
 
