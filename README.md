@@ -17,14 +17,14 @@ composer update
 ```
 copy .env.example .env
 ```
-5. Acessar o Visual Studio Code
-```
-code .
-```
-6. Nome e E-mail
+5. Nome e E-mail
 ```
 git config  --global user.name "jujulilia"
 git config --global user.email "jujuscosta07@gmail.com"
+```
+6. Acessar o Visual Studio Code
+```
+code .
 ```
 
 ## Licença
