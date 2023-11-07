@@ -196,6 +196,15 @@ if(count($profissionais) > 0){
     'message' => "Não há resultado para pesquisa"
 ]);
 }
+
+public function retornarTodos(){
+    $profissionais = Profissional::all();
+
+    return response()-> json([
+        'status' => true,
+        'data' => $profissionais
+    ]);
+  }
 }
 
 

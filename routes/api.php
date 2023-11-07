@@ -33,6 +33,9 @@ Route::post('servico/nome',
 Route::get('servico/find/descricao/{descricao}',
 [ServicoController::class, 'pesquisarPoDescricao']);
 
+Route::get('servico/retornarTodos',
+[ServicoController::class, 'retornarTodos']);
+
 
 
 Route::post('cliente/store',
@@ -77,3 +80,6 @@ Route::get('profissional/cpf',
 
 Route::get('profissional/email',
 [ProfissionalControler::class, 'pesquisarPorEmail']);
+
+Route::get('profissional/retornarTodos',
+[ProfissionalControler::class, 'retornarTodos']);
