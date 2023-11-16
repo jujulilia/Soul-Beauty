@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Servico
 Route::post('servico/store',
 [ServicoController::class, 'store']);
 
@@ -37,7 +38,7 @@ Route::get('servico/retornarTodos',
 [ServicoController::class, 'retornarTodos']);
 
 
-
+//Cliente
 Route::post('cliente/store',
 [ClienteController::class, 'store']);
 
@@ -60,6 +61,7 @@ Route::get('cliente/email',
 [ClienteController::class, 'pesquisarPorEmail']);
 
 
+//Profissional
 Route::post('profissional/store',
 [ProfissionalControler::class, 'store']);
 
@@ -83,3 +85,19 @@ Route::get('profissional/email',
 
 Route::get('profissional/retornarTodos',
 [ProfissionalControler::class, 'retornarTodos']);
+
+//Cliente
+Route::post('agenda/store',
+[AgendaController::class, 'store']);
+
+Route::get('agenda/nome',
+[AgendaController::class, 'pesquisarPorData']);
+
+Route::get('agenda/profissional',
+[AgendaController::class, 'pesquisarProfissionalAgenda']);
+
+Route::put('agenda/update',
+[AgendaController::class, 'updateAgenda']);
+
+Route::delete('agenda/delete/{id}',
+[AgendaController::class, 'excluirAgenda']);
