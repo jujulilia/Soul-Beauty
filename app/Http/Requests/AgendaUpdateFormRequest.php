@@ -7,6 +7,8 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
+use function PHPUnit\Framework\returnArgument;
+
 class AgendaRequest extends FormRequest
 {
     /**
