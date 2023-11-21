@@ -205,6 +205,22 @@ public function retornarTodos(){
         'data' => $profissionais
     ]);
   }
+
+  public function pesquisarPorId($id){
+    $profissional = Profissional::find($id);
+
+    if($profissional == null){
+        return response()->json([
+            'status' => false,
+            'message' => "Serviço não encontrado"
+        ]);
+    }
+
+    return response()->json([
+        'status'=> true,
+        'data'=> $profissional
+    ]);
+}
 }
 
 

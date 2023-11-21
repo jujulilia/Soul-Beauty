@@ -20,7 +20,7 @@ class AgendaController extends Controller
 
         return response()->json([
             "success" => true,
-            "message" => "Compromisso na agenda foi cadastrado com sucesso.",
+            "message" => "Compromisso foi cadastrado na agenda com sucesso.",
             "data" => $agenda
 
         ], 200);
@@ -49,7 +49,7 @@ class AgendaController extends Controller
         if( 'status' == false){
             return response()->json([
        
-                'data' => 'Profissional não está disponível.' ]);
+                'data' => 'Profissional não disponível.' ]);
         }
     }
     public function retornarTodosClientes(){
@@ -65,7 +65,7 @@ class AgendaController extends Controller
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => "Compromisso não foi encontrado na agenda."
+                'message' => "Compromisso não encontrado na agenda."
             ]);
         }
 
@@ -80,7 +80,7 @@ class AgendaController extends Controller
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => "Compromisso não foi encontrado na agenda."
+                'message' => "Compromisso não encontrado na agenda."
             ]);
         }
 
@@ -94,7 +94,7 @@ class AgendaController extends Controller
         if (isset($request->data_hora)){
             $agenda->data_hora = $request->data_hora;
         }
-        if (isset($request->pagamento)){
+        if (isset($request->tipo_pagamento)){
             $agenda->tipo_pagamento = $request->tipo_pagamento;
         }
         if (isset($request->valor)){
@@ -104,7 +104,7 @@ class AgendaController extends Controller
         $agenda->update();
         return response()->json([
             'status' => true,
-            'message' => 'Compromisso na agenda foi atualizado.'
+            'message' => 'Compromisso atualizado.'
         ]);
     }
 }

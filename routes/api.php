@@ -31,11 +31,14 @@ Route::put('servico/update',
 Route::post('servico/nome',
 [ServicoController::class, 'pesquisarPorNome']);
 
-Route::get('servico/find/descricao/{descricao}',
+Route::get('servico/find/descricao',
 [ServicoController::class, 'pesquisarPoDescricao']);
 
 Route::get('servico/retornarTodos',
 [ServicoController::class, 'retornarTodos']);
+
+Route::get('servico/find/{id}',
+[ServicoController::class, 'pesquisarPorId']);
 
 
 //Cliente
@@ -86,7 +89,10 @@ Route::get('profissional/email',
 Route::get('profissional/retornarTodos',
 [ProfissionalControler::class, 'retornarTodos']);
 
-//Cliente
+Route::get('profissional/find/{id}',
+[ProfissionalControler::class, 'pesquisarPorId']);
+
+//Agenda
 Route::post('agenda/store',
 [AgendaController::class, 'store']);
 

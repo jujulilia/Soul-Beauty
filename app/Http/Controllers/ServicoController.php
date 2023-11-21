@@ -116,5 +116,20 @@ class ServicoController extends Controller
         'data' => $servicos
     ]);
   }
-  
+
+  public function pesquisarPorId($id){
+    $servico = Servico::find($id);
+
+    if($servico == null){
+        return response()->json([
+            'status' => false,
+            'message' => "Serviço não encontrado"
+        ]);
+    }
+
+    return response()->json([
+        'status'=> true,
+        'data'=> $servico
+    ]);
+}
 }
