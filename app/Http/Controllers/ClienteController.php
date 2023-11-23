@@ -190,4 +190,29 @@ class ClienteController extends Controller
         'message' => "Não há resultado para pesquisa"
     ]);
     }
+
+    public function retornarTodos(){
+        $profissionais = Cliente::all();
+    
+        return response()-> json([
+            'status' => true,
+            'data' => $profissionais
+        ]);
+      }
+    
+      public function pesquisarPorId($id){
+        $profissional = Cliente::find($id);
+    
+        if($profissional == null){
+            return response()->json([
+                'status' => false,
+                'message' => "Serviço não encontrado"
+            ]);
+        }
+    
+        return response()->json([
+            'status'=> true,
+            'data'=> $profissional
+        ]);
+    }
     }

@@ -51,7 +51,7 @@ Route::delete('cliente/delete/{id}',
 Route::put('cliente/update',
 [ClienteController::class, 'update']);
 
-Route::get('cliente/nome',
+Route::post('cliente/nome',
 [ClienteController::class, 'pesquisarPorNome']);
 
 Route::get('cliente/celular',
@@ -62,6 +62,12 @@ Route::get('cliente/cpf',
 
 Route::get('cliente/email',
 [ClienteController::class, 'pesquisarPorEmail']);
+
+Route::get('cliente/retornarTodos',
+[ClienteController::class, 'retornarTodos']);
+
+Route::get('cliente/find/{id}',
+[ClienteController::class, 'pesquisarPorId']);
 
 
 //Profissional
@@ -74,7 +80,7 @@ Route::delete('profissional/delete/{id}',
 Route::put('profissional/update',
 [ProfissionalControler::class, 'update']);
 
-Route::get('profissional/nome',
+Route::post('profissional/nome',
 [ProfissionalControler::class, 'pesquisarPorNome']);
 
 Route::get('profissional/celular',
