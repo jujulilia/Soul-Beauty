@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ServicoRequest;
+use App\Http\Requests\ServicoUpdateRequest;
 use App\Models\Profissional;
 use App\Models\Servico;
 use Illuminate\Contracts\Validation\Validator;
@@ -45,7 +46,7 @@ class ServicoController extends Controller
   ]);
   }
   
-  public function update(Request $request){
+  public function update(ServicoUpdateRequest $request){
       $usuario = Servico::find($request->id);
   
       if(!isset($usuario)){

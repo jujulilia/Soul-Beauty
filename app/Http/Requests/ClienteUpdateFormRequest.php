@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class ClienteRequest extends FormRequest
+class ClienteUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -35,14 +35,14 @@ class ClienteRequest extends FormRequest
                 'rua' => 'max:120',
                 'numero' => 'max:10',
                 'bairro' => 'max:100',
-                'cep' => 'max:8|min:8',
-                'complemento' => 'max:150',
+                'cep' => 'max:9|min:8',
+                'complemento' => 'max:150|min:5',
                 'password' => ''
             ];
     }
     public function failedValidation(Validator $validator){
         throw new HttpResponseException(response()->json([
-            'sccess' => false,
+            'success' => false,
             'error' => $validator->errors()
         ]));
     }
@@ -68,6 +68,7 @@ class ClienteRequest extends FormRequest
         'cep.max' => 'O CEP deve conter no máximo 8 caracteres',
         'cep.min' => 'O CEP deve conter no mínimo 8 caracteres',
         'complemento' => 'O complemento deve conter no máximo 150 caracteres',
+        'complemento' => 'O complemento deve conter no mínimo 5 caracteres',
     ];
 }
    
