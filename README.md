@@ -26,15 +26,17 @@ git config --global user.email "jujuscosta07@gmail.com"
 ```
 code .
 ```
-7. comando
+7. Comando
 ```
 php artisan migrate
 ```
-9. fresh
+9. Fresh
 ```
 php artisan migrate:fresh
 ```
-10. php artisan serve
+10. Abrir servidor
+```
+php artisan serve
 ```
 ## Licença
 
