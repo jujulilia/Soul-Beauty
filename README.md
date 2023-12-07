@@ -1,4 +1,4 @@
-## Como utilizar este repositório
+## Soul-beauty
 
 1. Clone este repositório para o seu ambiente de desenvolvimento local utilizando o comando:
 ```
