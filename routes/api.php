@@ -21,22 +21,16 @@ use Illuminate\Support\Facades\Route;
 //Servico
 Route::post('servico/store',
 [ServicoController::class, 'store']);
-
 Route::delete('servico/delete/{id}',
 [ServicoController::class, 'excluir']);
-
 Route::put('servico/update',
 [ServicoController::class, 'update']);
-
 Route::post('servico/nome',
 [ServicoController::class, 'pesquisarPorNome']);
-
 Route::get('servico/find/descricao',
 [ServicoController::class, 'pesquisarPoDescricao']);
-
 Route::get('servico/retornarTodos',
 [ServicoController::class, 'retornarTodos']);
-
 Route::get('servico/find/{id}',
 [ServicoController::class, 'pesquisarPorId']);
 
@@ -44,28 +38,20 @@ Route::get('servico/find/{id}',
 //Cliente
 Route::post('cliente/store',
 [ClienteController::class, 'store']);
-
 Route::delete('cliente/delete/{id}',
 [ClienteController::class, 'excluir']);
-
 Route::put('cliente/update',
 [ClienteController::class, 'update']);
-
 Route::post('cliente/nome',
 [ClienteController::class, 'pesquisarPorNome']);
-
 Route::get('cliente/celular',
 [ClienteController::class, 'pesquisarPorCelular']);
-
 Route::get('cliente/cpf',
 [ClienteController::class, 'pesquisarPorCpf']);
-
 Route::get('cliente/email',
 [ClienteController::class, 'pesquisarPorEmail']);
-
 Route::get('cliente/retornarTodos',
 [ClienteController::class, 'retornarTodos']);
-
 Route::get('cliente/find/{id}',
 [ClienteController::class, 'pesquisarPorId']);
 
@@ -73,43 +59,31 @@ Route::get('cliente/find/{id}',
 //Profissional
 Route::post('profissional/store',
 [ProfissionalControler::class, 'store']);
-
 Route::delete('profissional/delete/{id}',
 [ProfissionalControler::class, 'excluir']);
-
 Route::put('profissional/update',
 [ProfissionalControler::class, 'update']);
-
 Route::post('profissional/nome',
 [ProfissionalControler::class, 'pesquisarPorNome']);
-
 Route::get('profissional/celular',
 [ProfissionalControler::class, 'pesquisarPorCelular']);
-
 Route::get('profissional/cpf',
 [ProfissionalControler::class, 'pesquisarPorCpf']);
-
 Route::get('profissional/email',
 [ProfissionalControler::class, 'pesquisarPorEmail']);
-
 Route::get('profissional/retornarTodos',
 [ProfissionalControler::class, 'retornarTodos']);
-
 Route::get('profissional/find/{id}',
 [ProfissionalControler::class, 'pesquisarPorId']);
 
 //Agenda
 Route::post('agenda/store',
 [AgendaController::class, 'store']);
-
-Route::get('agenda/nome',
-[AgendaController::class, 'pesquisarPorData']);
-
-Route::get('agenda/profissional',
-[AgendaController::class, 'pesquisarProfissionalAgenda']);
-
+Route::post('agenda/procurarAgenda',
+[AgendaController::class,'pesquisarPorAgenda']);
 Route::put('agenda/update',
-[AgendaController::class, 'updateAgenda']);
-
+[AgendaControllerer::class, 'updateAgenda']);
 Route::delete('agenda/delete/{id}',
 [AgendaController::class, 'excluirAgenda']);
+Route::get('agenda/retornarTodos',
+[AgendaController::class, 'retornarTodos']);
