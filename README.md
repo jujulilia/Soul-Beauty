@@ -26,17 +26,16 @@ git config --global user.email "jujuscosta07@gmail.com"
 ```
 code .
 ```
-
 7. comando
-   ´´´
+```
 php artisan migrate
-   ´´´
-8. fresh
- ´´´
+```
+9. fresh
+```
 php artisan migrate:fresh
-´´´
-9. php artisan serve
-´´´
+```
+10. php artisan serve
+```
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE), o que significa que você pode utilizá-lo livremente para fins educacionais, comerciais ou pessoais.
