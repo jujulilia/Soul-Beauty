@@ -1,4 +1,4 @@
-## Como utilizar este repositório
+## Soul-beauty
 
 1. Clone este repositório para o seu ambiente de desenvolvimento local utilizando o comando:
 ```
@@ -26,7 +26,18 @@ git config --global user.email "jujuscosta07@gmail.com"
 ```
 code .
 ```
-
+7. Comando
+```
+php artisan migrate
+```
+9. Fresh
+```
+php artisan migrate:fresh
+```
+10. Abrir servidor
+```
+php artisan serve
+```
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE), o que significa que você pode utilizá-lo livremente para fins educacionais, comerciais ou pessoais.
